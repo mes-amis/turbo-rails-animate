@@ -1,4 +1,4 @@
-window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
+window.TurboRailsAnimate = window.TurboRailsAnimate || new function () {
   this.options = {};
   this.inline = false;
   this.element = null;
@@ -6,70 +6,70 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
   this.disappearing = false;
   this.initialized = false;
   this.animations = [
-    {name: 'fadeIn', disappear: 'fadeOut', reverse: null},
-    {name: 'fadeOut', disappear: true, reverse: null},
-    {name: 'fadeInUp', disappear: 'fadeOutUp', reverse: 'fadeInDown'},
-    {name: 'fadeOutUp', disappear: true, reverse: 'fadeOutDown'},
-    {name: 'fadeInDown', disappear: 'fadeOutDown', reverse: 'fadeInUp'},
-    {name: 'fadeOutDown', disappear: true, reverse: 'fadeOutUp'},
-    {name: 'fadeInLeft', disappear: 'fadeOutLeft', reverse: 'fadeInRight'},
-    {name: 'fadeOutLeft', disappear: true, reverse: 'fadeOutRight'},
-    {name: 'fadeInRight', disappear: 'fadeOutRight', reverse: 'fadeInLeft'},
-    {name: 'fadeOutRight', disappear: true, reverse: 'fadeOutLeft'},
-    {name: 'fadeInUpBig', disappear: 'fadeOutUpBig', reverse: 'fadeInDownBig'},
-    {name: 'fadeOutUpBig', disappear: true, reverse: 'fadeOutDownBig'},
-    {name: 'fadeInDownBig', disappear: 'fadeOutDownBig', reverse: 'fadeInUpBig'},
-    {name: 'fadeOutDownBig', disappear: true, reverse: 'fadeOutUpBig'},
-    {name: 'fadeInLeftBig', disappear: 'fadeOutLeftBig', reverse: 'fadeInRightBig'},
-    {name: 'fadeOutLeftBig', disappear: true, reverse: 'fadeOutRightBig'},
-    {name: 'fadeInRightBig', disappear: 'fadeOutRightBig', reverse: 'fadeInLeftBig'},
-    {name: 'fadeOutRightBig', disappear: true, reverse: 'fadeOutLeftBig'},
-    {name: 'bounceIn', disappear: 'bounceOut', reverse: null},
-    {name: 'bounceOut', disappear: true, reverse: null},
-    {name: 'bounceInUp', disappear: 'bounceOutUp', reverse: 'bounceInDown'},
-    {name: 'bounceOutUp', disappear: true, reverse: 'bounceOutDown'},
-    {name: 'bounceInDown', disappear: 'bounceOutDown', reverse: 'bounceInUp'},
-    {name: 'bounceOutDown', disappear: true, reverse: 'bounceOutUp'},
-    {name: 'bounceInLeft', disappear: 'bounceOutLeft', reverse: 'bounceInRight'},
-    {name: 'bounceOutLeft', disappear: true, reverse: 'bounceOutRight'},
-    {name: 'bounceInRight', disappear: 'bounceOutRight', reverse: 'bounceInLeft'},
-    {name: 'bounceOutRight', disappear: true, reverse: 'bounceOutLeft'},
-    {name: 'flipInX', disappear: 'flipOutX', reverse: 'flipInY'},
-    {name: 'flipOutX', disappear: true, reverse: 'flipOutY'},
-    {name: 'flipInY', disappear: 'flipOutY', reverse: 'flipInX'},
-    {name: 'flipOutY', disappear: true, reverse: 'flipOutX'},
-    {name: 'lightSpeedIn', disappear: 'lightSpeedOut', reverse: null},
-    {name: 'lightSpeedOut', disappear: true, reverse: null},
-    {name: 'rotateIn', disappear: 'rotateOut', reverse: null},
-    {name: 'rotateOut', disappear: true, reverse: null},
-    {name: 'rotateInDownLeft', disappear: 'rotateOutDownLeft', reverse: 'rotateInUpRight'},
-    {name: 'rotateOutDownLeft', disappear: true, reverse: 'rotateOutUpRight'},
-    {name: 'rotateInDownRight', disappear: 'rotateOutDownRight', reverse: 'rotateInUpLeft'},
-    {name: 'rotateOutDownRight', disappear: true, reverse: 'rotateOutUpLeft'},
-    {name: 'rotateInUpLeft', disappear: 'rotateOutUpLeft', reverse: 'rotateInDownRight'},
-    {name: 'rotateOutUpLeft', disappear: true, reverse: 'rotateOutDownRight'},
-    {name: 'rotateInUpRight', disappear: 'rotateOutUpRight', reverse: 'rotateInDownLeft'},
-    {name: 'rotateOutUpRight', disappear: true, reverse: 'rotateOutDownLeft'},
-    {name: 'rollIn', disappear: 'rollOut', reverse: null},
-    {name: 'rollOut', disappear: true, reverse: null},
-    {name: 'zoomIn', disappear: 'zoomOut', reverse: null},
-    {name: 'zoomOut', disappear: true, reverse: null},
-    {name: 'zoomInUp', disappear: 'zoomOutUp', reverse: 'zoomInDown'},
-    {name: 'zoomOutUp', disappear: true, reverse: 'zoomOutDown'},
-    {name: 'zoomInDown', disappear: 'zoomOutDown', reverse: 'zoomInUp'},
-    {name: 'zoomOutDown', disappear: true, reverse: 'zoomOutUp'},
-    {name: 'zoomInLeft', disappear: 'zoomOutLeft', reverse: 'zoomInRight'},
-    {name: 'zoomOutLeft', disappear: true, reverse: 'zoomOutRight'},
-    {name: 'zoomInRight', disappear: 'zoomOutRight', reverse: 'zoomInLeft'},
-    {name: 'zoomOutRight', disappear: true, reverse: 'zoomOutLeft'},
-    {name: 'slideInUp', disappear: 'slideOutUp', reverse: 'slideInDown'},
-    {name: 'slideOutUp', disappear: true, reverse: 'slideOutDown'},
-    {name: 'slideInDown', disappear: 'slideOutDown', reverse: 'slideInUp'},
-    {name: 'slideOutDown', disappear: true, reverse: 'slideOutUp'},
-    {name: 'slideInLeft', disappear: 'slideOutLeft', reverse: 'slideInRight'},
-    {name: 'slideOutLeft', disappear: true, reverse: 'slideOutRight'},
-    {name: 'slideInRight', disappear: 'slideOutRight', reverse: 'slideInLeft'},
-    {name: 'slideOutRight', disappear: true, reverse: 'slideOutLeft'}
+    { name: 'fadeIn', disappear: 'fadeOut', reverse: null },
+    { name: 'fadeOut', disappear: true, reverse: null },
+    { name: 'fadeInUp', disappear: 'fadeOutUp', reverse: 'fadeInDown' },
+    { name: 'fadeOutUp', disappear: true, reverse: 'fadeOutDown' },
+    { name: 'fadeInDown', disappear: 'fadeOutDown', reverse: 'fadeInUp' },
+    { name: 'fadeOutDown', disappear: true, reverse: 'fadeOutUp' },
+    { name: 'fadeInLeft', disappear: 'fadeOutLeft', reverse: 'fadeInRight' },
+    { name: 'fadeOutLeft', disappear: true, reverse: 'fadeOutRight' },
+    { name: 'fadeInRight', disappear: 'fadeOutRight', reverse: 'fadeInLeft' },
+    { name: 'fadeOutRight', disappear: true, reverse: 'fadeOutLeft' },
+    { name: 'fadeInUpBig', disappear: 'fadeOutUpBig', reverse: 'fadeInDownBig' },
+    { name: 'fadeOutUpBig', disappear: true, reverse: 'fadeOutDownBig' },
+    { name: 'fadeInDownBig', disappear: 'fadeOutDownBig', reverse: 'fadeInUpBig' },
+    { name: 'fadeOutDownBig', disappear: true, reverse: 'fadeOutUpBig' },
+    { name: 'fadeInLeftBig', disappear: 'fadeOutLeftBig', reverse: 'fadeInRightBig' },
+    { name: 'fadeOutLeftBig', disappear: true, reverse: 'fadeOutRightBig' },
+    { name: 'fadeInRightBig', disappear: 'fadeOutRightBig', reverse: 'fadeInLeftBig' },
+    { name: 'fadeOutRightBig', disappear: true, reverse: 'fadeOutLeftBig' },
+    { name: 'bounceIn', disappear: 'bounceOut', reverse: null },
+    { name: 'bounceOut', disappear: true, reverse: null },
+    { name: 'bounceInUp', disappear: 'bounceOutUp', reverse: 'bounceInDown' },
+    { name: 'bounceOutUp', disappear: true, reverse: 'bounceOutDown' },
+    { name: 'bounceInDown', disappear: 'bounceOutDown', reverse: 'bounceInUp' },
+    { name: 'bounceOutDown', disappear: true, reverse: 'bounceOutUp' },
+    { name: 'bounceInLeft', disappear: 'bounceOutLeft', reverse: 'bounceInRight' },
+    { name: 'bounceOutLeft', disappear: true, reverse: 'bounceOutRight' },
+    { name: 'bounceInRight', disappear: 'bounceOutRight', reverse: 'bounceInLeft' },
+    { name: 'bounceOutRight', disappear: true, reverse: 'bounceOutLeft' },
+    { name: 'flipInX', disappear: 'flipOutX', reverse: 'flipInY' },
+    { name: 'flipOutX', disappear: true, reverse: 'flipOutY' },
+    { name: 'flipInY', disappear: 'flipOutY', reverse: 'flipInX' },
+    { name: 'flipOutY', disappear: true, reverse: 'flipOutX' },
+    { name: 'lightSpeedIn', disappear: 'lightSpeedOut', reverse: null },
+    { name: 'lightSpeedOut', disappear: true, reverse: null },
+    { name: 'rotateIn', disappear: 'rotateOut', reverse: null },
+    { name: 'rotateOut', disappear: true, reverse: null },
+    { name: 'rotateInDownLeft', disappear: 'rotateOutDownLeft', reverse: 'rotateInUpRight' },
+    { name: 'rotateOutDownLeft', disappear: true, reverse: 'rotateOutUpRight' },
+    { name: 'rotateInDownRight', disappear: 'rotateOutDownRight', reverse: 'rotateInUpLeft' },
+    { name: 'rotateOutDownRight', disappear: true, reverse: 'rotateOutUpLeft' },
+    { name: 'rotateInUpLeft', disappear: 'rotateOutUpLeft', reverse: 'rotateInDownRight' },
+    { name: 'rotateOutUpLeft', disappear: true, reverse: 'rotateOutDownRight' },
+    { name: 'rotateInUpRight', disappear: 'rotateOutUpRight', reverse: 'rotateInDownLeft' },
+    { name: 'rotateOutUpRight', disappear: true, reverse: 'rotateOutDownLeft' },
+    { name: 'rollIn', disappear: 'rollOut', reverse: null },
+    { name: 'rollOut', disappear: true, reverse: null },
+    { name: 'zoomIn', disappear: 'zoomOut', reverse: null },
+    { name: 'zoomOut', disappear: true, reverse: null },
+    { name: 'zoomInUp', disappear: 'zoomOutUp', reverse: 'zoomInDown' },
+    { name: 'zoomOutUp', disappear: true, reverse: 'zoomOutDown' },
+    { name: 'zoomInDown', disappear: 'zoomOutDown', reverse: 'zoomInUp' },
+    { name: 'zoomOutDown', disappear: true, reverse: 'zoomOutUp' },
+    { name: 'zoomInLeft', disappear: 'zoomOutLeft', reverse: 'zoomInRight' },
+    { name: 'zoomOutLeft', disappear: true, reverse: 'zoomOutRight' },
+    { name: 'zoomInRight', disappear: 'zoomOutRight', reverse: 'zoomInLeft' },
+    { name: 'zoomOutRight', disappear: true, reverse: 'zoomOutLeft' },
+    { name: 'slideInUp', disappear: 'slideOutUp', reverse: 'slideInDown' },
+    { name: 'slideOutUp', disappear: true, reverse: 'slideOutDown' },
+    { name: 'slideInDown', disappear: 'slideOutDown', reverse: 'slideInUp' },
+    { name: 'slideOutDown', disappear: true, reverse: 'slideOutUp' },
+    { name: 'slideInLeft', disappear: 'slideOutLeft', reverse: 'slideInRight' },
+    { name: 'slideOutLeft', disappear: true, reverse: 'slideOutRight' },
+    { name: 'slideInRight', disappear: 'slideOutRight', reverse: 'slideInLeft' },
+    { name: 'slideOutRight', disappear: true, reverse: 'slideOutLeft' }
   ];
   let array = [];
   this.animations.forEach((animation) => array.push(animation.name));
@@ -83,63 +83,63 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
       delay: false,
       reversedDisappearing: false,
       breakpoints: [
-        {name: 'mobile', width: 500},
-        {name: 'tablet', width: 1024},
-        {name: 'desktop', width: 1440}
+        { name: 'mobile', width: 500 },
+        { name: 'tablet', width: 1024 },
+        { name: 'desktop', width: 1440 }
       ],
       customListeners: false
     };
     options = extend({}, defaults, options);
 
-    TurbolinksAnimate.element = options.element;
-    TurbolinksAnimate.setOptions(options);
+    TurboRailsAnimate.element = options.element;
+    TurboRailsAnimate.setOptions(options);
     if ('scrollRestoration' in history)
       history.scrollRestoration = 'manual';
 
-    if (TurbolinksAnimate.initialized == false && options.customListeners == false) {
-      document.addEventListener('turbolinks:request-start', () => {
-        TurbolinksAnimate.disappear();
+    if (TurboRailsAnimate.initialized == false && options.customListeners == false) {
+      document.addEventListener('turbo:request-start', () => {
+        TurboRailsAnimate.disappear();
       });
       window.addEventListener('popstate', () => {
-        TurbolinksAnimate.disappear();
+        TurboRailsAnimate.disappear();
       });
       let ignoreBeforeunload = false;
       document.querySelectorAll('a[href^=mailto]').forEach((element) => element.addEventListener('click', () => ignoreBeforeunload = true));
       window.addEventListener('beforeunload', () => {
         if (!ignoreBeforeunload)
-          TurbolinksAnimate.disappear();
+          TurboRailsAnimate.disappear();
         ignoreBeforeunload = false;
       });
-      document.addEventListener('turbolinks:before-render', (event) => {
-        TurbolinksAnimate.prepareTransition(event.data.newBody);
+      document.addEventListener('turbo:before-render', (event) => {
+        TurboRailsAnimate.prepareTransition(event.data.newBody);
       });
-      document.addEventListener('turbolinks:render', () => {
-        TurbolinksAnimate.transition();
+      document.addEventListener('turbo:render', () => {
+        TurboRailsAnimate.transition();
       });
     }
 
     document.querySelectorAll('a, button').forEach((element) => {
       element.addEventListener('click', () => {
-        if (typeof element.dataset.turbolinksAnimateAnimation !== 'undefined')
-          TurbolinksAnimate.inline = true;
-        TurbolinksAnimate.options.animation = element.dataset.turbolinksAnimateAnimation || options.animation;
-        TurbolinksAnimate.options.appear = element.dataset.turbolinksAnimateAppear;
-        TurbolinksAnimate.options.duration = element.dataset.turbolinksAnimateDuration || options.duration;
-        TurbolinksAnimate.options.delay = element.dataset.turbolinksAnimateDelay || options.delay;
-        TurbolinksAnimate.options.type = element.dataset.turbolinksAnimateType;
+        if (typeof element.dataset.TurboRailsAnimateAnimation !== 'undefined')
+          TurboRailsAnimate.inline = true;
+        TurboRailsAnimate.options.animation = element.dataset.TurboRailsAnimateAnimation || options.animation;
+        TurboRailsAnimate.options.appear = element.dataset.TurboRailsAnimateAppear;
+        TurboRailsAnimate.options.duration = element.dataset.TurboRailsAnimateDuration || options.duration;
+        TurboRailsAnimate.options.delay = element.dataset.TurboRailsAnimateDelay || options.delay;
+        TurboRailsAnimate.options.type = element.dataset.TurboRailsAnimateType;
       });
     });
 
-    TurbolinksAnimate.initialized = true;
+    TurboRailsAnimate.initialized = true;
     if (options.customListeners == false)
-      TurbolinksAnimate.appear();
+      TurboRailsAnimate.appear();
   };
 
   this.setOptions = (options) => {
-    let previousType = TurbolinksAnimate.options.type,
-      appear = TurbolinksAnimate.options.appear;
+    let previousType = TurboRailsAnimate.options.type,
+      appear = TurboRailsAnimate.options.appear;
 
-    TurbolinksAnimate.options = {
+    TurboRailsAnimate.options = {
       animation: options.animation,
       duration: options.duration,
       delay: options.delay,
@@ -151,9 +151,9 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
   };
 
   this.prepareTransition = (newBody) => {
-    document.querySelectorAll('[data-turbolinks-animate-transition]').forEach((element) => {
-      let properties = element.dataset.turbolinksAnimateTransition.split(','),
-        matchingElements = newBody.querySelectorAll(element.tagName + '[data-turbolinks-animate-transition]'),
+    document.querySelectorAll('[data-turbo-rails-animate-transition]').forEach((element) => {
+      let properties = element.dataset.TurboRailsAnimateTransition.split(','),
+        matchingElements = newBody.querySelectorAll(element.tagName + '[data-turbo-rails-animate-transition]'),
         newElement = null;
 
       if (matchingElements.length == 1) {
@@ -169,11 +169,11 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
       });
     });
   };
-  
+
   this.transition = () => {
-    document.querySelectorAll('[data-turbolinks-animate-transition]').forEach((element) => {
+    document.querySelectorAll('[data-turbo-rails-animate-transition]').forEach((element) => {
       setTimeout(() => {
-        let properties = element.dataset.turbolinksAnimateTransition.split(',');
+        let properties = element.dataset.TurboRailsAnimateTransition.split(',');
         properties.forEach((property) => {
           element.style[cssPropertyToCamelCase(property)] = null;
         });
@@ -182,103 +182,103 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
   };
 
   this.appear = () => {
-    TurbolinksAnimate.disappearing = false;
-    TurbolinksAnimate.toggle();
+    TurboRailsAnimate.disappearing = false;
+    TurboRailsAnimate.toggle();
   };
   this.disappear = () => {
-    TurbolinksAnimate.disappearing = true;
-    TurbolinksAnimate.toggle();
+    TurboRailsAnimate.disappearing = true;
+    TurboRailsAnimate.toggle();
   };
   this.toggle = () => {
-    if (TurbolinksAnimate.options.animation != 'false') {
-      TurbolinksAnimate.resetClasses();
-      TurbolinksAnimate.getElements();
-      TurbolinksAnimate.useOptions();
+    if (TurboRailsAnimate.options.animation != 'false') {
+      TurboRailsAnimate.resetClasses();
+      TurboRailsAnimate.getElements();
+      TurboRailsAnimate.useOptions();
       Turbolinks.clearCache();
-      TurbolinksAnimate.animate();
-      TurbolinksAnimate.reset();
+      TurboRailsAnimate.animate();
+      TurboRailsAnimate.reset();
     }
   };
 
   this.getElements = () => {
-    TurbolinksAnimate.elements = [];
+    TurboRailsAnimate.elements = [];
 
     function getChildren(parent) {
-      let type = TurbolinksAnimate.options.type || TurbolinksAnimate.options.previousType || 'true';
-      if (parent.dataset.turbolinksAnimatePersist == type) {
+      let type = TurboRailsAnimate.options.type || TurboRailsAnimate.options.previousType || 'true';
+      if (parent.dataset.TurboRailsAnimatePersist == type) {
         return;
-      } else if (parent.dataset.turbolinksAnimatePersistItself == type || parent.querySelectorAll('[data-turbolinks-animate-persist]').length > 0 || parent.querySelectorAll('[data-turbolinks-animate-persist-itself]').length > 0) {
+      } else if (parent.dataset.TurboRailsAnimatePersistItself == type || parent.querySelectorAll('[data-turbo-rails-animate-persist]').length > 0 || parent.querySelectorAll('[data-turbo-rails-animate-persist-itself]').length > 0) {
         let children = parent.children;
         for (let i = 0; i < children.length; i++) {
           getChildren(children[i]);
         }
       } else {
-        TurbolinksAnimate.elements.push(parent);
+        TurboRailsAnimate.elements.push(parent);
       }
     }
 
-    getChildren(TurbolinksAnimate.element);
+    getChildren(TurboRailsAnimate.element);
   };
   this.useOptions = () => {
-    if (TurbolinksAnimate.elements != null) {
-      TurbolinksAnimate.elements.forEach((element) => {
-        element.style.animationDuration = TurbolinksAnimate.options.duration;
-        if (TurbolinksAnimate.options.delay != false)
-          element.style.animationDelay = TurbolinksAnimate.options.delay;
+    if (TurboRailsAnimate.elements != null) {
+      TurboRailsAnimate.elements.forEach((element) => {
+        element.style.animationDuration = TurboRailsAnimate.options.duration;
+        if (TurboRailsAnimate.options.delay != false)
+          element.style.animationDelay = TurboRailsAnimate.options.delay;
       });
     }
   };
 
   this.reset = () => {
-    delete TurbolinksAnimate.options.appear;
-    delete TurbolinksAnimate.options.previousType;
-    TurbolinksAnimate.inline = false;
+    delete TurboRailsAnimate.options.appear;
+    delete TurboRailsAnimate.options.previousType;
+    TurboRailsAnimate.inline = false;
   };
   this.resetClasses = () => {
-    if (TurbolinksAnimate.elements != null) {
-      TurbolinksAnimate.elements.forEach((element) => {
-        TurbolinksAnimate.animateClasses.forEach((animation) => element.classList.remove(animation));
+    if (TurboRailsAnimate.elements != null) {
+      TurboRailsAnimate.elements.forEach((element) => {
+        TurboRailsAnimate.animateClasses.forEach((animation) => element.classList.remove(animation));
       });
     }
   };
 
   this.animate = () => {
-    let animation = TurbolinksAnimate.getAnimation();
+    let animation = TurboRailsAnimate.getAnimation();
 
-    TurbolinksAnimate.element.addEventListener('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', (event) => {
+    TurboRailsAnimate.element.addEventListener('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', (event) => {
       if (event.currentTarget.dataset.triggered)
         return;
       event.currentTarget.dataset.triggered = true;
 
-      dispatchEvent('turbolinks:animation-end', {detail: {element: TurbolinksAnimate.element, disappearing: TurbolinksAnimate.disappearing}});
+      dispatchEvent('turbo:animation-end', { detail: { element: TurboRailsAnimate.element, disappearing: TurboRailsAnimate.disappearing } });
     });
 
-    dispatchEvent('turbolinks:animation-start', {detail: {element: TurbolinksAnimate.element, disappearing: TurbolinksAnimate.disappearing, animation: animation}});
+    dispatchEvent('turbo:animation-start', { detail: { element: TurboRailsAnimate.element, disappearing: TurboRailsAnimate.disappearing, animation: animation } });
 
-    TurbolinksAnimate.elements.forEach((element) => {
+    TurboRailsAnimate.elements.forEach((element) => {
       element.addEventListener('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', () => {
         if (event.currentTarget.dataset.triggered)
           return;
         event.currentTarget.dataset.triggered = true;
         setTimeout(() => {
-          if (TurbolinksAnimate.disappearing == false)
-            TurbolinksAnimate.resetClasses();
+          if (TurboRailsAnimate.disappearing == false)
+            TurboRailsAnimate.resetClasses();
         }, 250);
       });
-      TurbolinksAnimate.getClassListFor(animation).forEach((animation) => element.classList.add(animation));
+      TurboRailsAnimate.getClassListFor(animation).forEach((animation) => element.classList.add(animation));
     });
   };
   this.getAnimation = () => {
     let animation;
 
-    if (!TurbolinksAnimate.disappearing)
-      animation = TurbolinksAnimate.options.appear;
-    if (TurbolinksAnimate.inline) {
-      animation = TurbolinksAnimate.options.animation;
-    } else if (typeof TurbolinksAnimate.element.dataset.turbolinksAnimateAnimation !== 'undefined') {
-      animation = TurbolinksAnimate.element.dataset.turbolinksAnimateAnimation;
+    if (!TurboRailsAnimate.disappearing)
+      animation = TurboRailsAnimate.options.appear;
+    if (TurboRailsAnimate.inline) {
+      animation = TurboRailsAnimate.options.animation;
+    } else if (typeof TurboRailsAnimate.element.dataset.TurboRailsAnimateAnimation !== 'undefined') {
+      animation = TurboRailsAnimate.element.dataset.TurboRailsAnimateAnimation;
     } else {
-      animation = TurbolinksAnimate.options.animation;
+      animation = TurboRailsAnimate.options.animation;
     }
 
     return animation;
@@ -288,7 +288,7 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
       browserWidth = window.innerWidth,
       animation = null;
 
-    let breakpoints = TurbolinksAnimate.options.breakpoints.sort((a, b) => {
+    let breakpoints = TurboRailsAnimate.options.breakpoints.sort((a, b) => {
       return b.width - a.width;
     });
     breakpoints.forEach((k, breakpoint) => {
@@ -298,11 +298,11 @@ window.TurbolinksAnimate = window.TurbolinksAnimate || new function() {
     if (animation == null)
       animation = animations;
 
-    animation = TurbolinksAnimate.animations.filter(object => object.name.toLowerCase() == animation.toLowerCase())[0];
-    if (TurbolinksAnimate.disappearing) {
+    animation = TurboRailsAnimate.animations.filter(object => object.name.toLowerCase() == animation.toLowerCase())[0];
+    if (TurboRailsAnimate.disappearing) {
       if (animation.disappear != true)
-        animation = TurbolinksAnimate.animations.filter(object => object.name.toLowerCase() == animation.disappear.toLowerCase())[0];
-      if (TurbolinksAnimate.options.reversedDisappearing && animation.reverse != null) {
+        animation = TurboRailsAnimate.animations.filter(object => object.name.toLowerCase() == animation.disappear.toLowerCase())[0];
+      if (TurboRailsAnimate.options.reversedDisappearing && animation.reverse != null) {
         classList.push(animation.reverse);
       } else {
         classList.push(animation.name);
