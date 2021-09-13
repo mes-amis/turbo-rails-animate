@@ -194,7 +194,7 @@ window.TurboRailsAnimate = window.TurboRailsAnimate || new function () {
       TurboRailsAnimate.resetClasses();
       TurboRailsAnimate.getElements();
       TurboRailsAnimate.useOptions();
-      Turbolinks.clearCache();
+      Turbo.clearCache();
       TurboRailsAnimate.animate();
       TurboRailsAnimate.reset();
     }
