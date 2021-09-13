@@ -111,7 +111,7 @@ window.TurboRailsAnimate = window.TurboRailsAnimate || new function () {
         ignoreBeforeunload = false;
       });
       document.addEventListener('turbo:before-render', (event) => {
-        TurboRailsAnimate.prepareTransition(event.data.newBody);
+        TurboRailsAnimate.prepareTransition(event.detail.newBody);
       });
       document.addEventListener('turbo:render', () => {
         TurboRailsAnimate.transition();
